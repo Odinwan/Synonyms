@@ -1,31 +1,233 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    outline: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modalWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px;
+    max-width: 560px;
+    max-height: 560px;
+    height: 100%;
+    width: 100%;
+    background: #EFEFEF;
+
+}
+
+.titleModal {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 28px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #DEDEDE;
+}
+
+.wrapperForm {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.titleForm {
+    color: #4F4F4F;
+    margin-right: 10px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.titleFormWrapper {
+    display: flex;
+}
+
+.wrapperInput {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: lowercase;
+    color: #787878;
+}
+input:focus {
+    color: black;
+    margin-top: 10px;
+    width: 100%;
+    background: none;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #344273;
+}
+input::placeholder {
+    color: rgb(145, 152, 177);
+}
+
+input {
+    color: black;
+    margin-top: 10px;
+    width: 100%;
+    background: none;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid rgb(145, 152, 177);
+}
+
+.error {
+    padding: 10px 0;
+    color: red;
+    display: flex;
+}
+
+.error svg {
+    margin-right: 10px;
+}
+
+.wrapperInput button {
+    min-width: 132px;
+    max-height: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms;
+    cursor: pointer;
+    margin-top: 5px;
+    background: #344273;
+    border: 2px solid #344273;
+    border-radius: 3px;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: lowercase;
+}
+
+.wrapperInput button:hover {
+    background: white;
+    color: #344273;
+}
+
+.mainControlButton {
+    border-top: 2px solid #DEDEDE;
+    padding-top: 19px;
+}
+
+.saveButton {
+    margin-right: 20px;
+    transition: 400ms;
+    cursor: pointer;
+    background: #5E9574;
+    border: 2px solid #5E9574;
+    border-radius: 3px;
+    padding: 6px 10px;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: lowercase;
+}
+
+.saveButton:hover {
+    background: white;
+    color: #344273;
+    border: 2px solid #344273;
+}
+
+.clearButton {
+    transition: 400ms;
+    cursor: pointer;
+    background: #955E5E;
+    border: 2px solid #955E5E;
+    border-radius: 3px;
+    padding: 6px 10px;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: lowercase;
+}
+
+.clearButton:hover {
+    background: white;
+    color: #344273;
+    border: 2px solid #344273;
+}
+
+.item {
+    transition: 400ms;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+    background: white;
+    padding: 11px;
+    margin-top: 5px;
+}
+.listWords {
+    max-height: 271px;
+    overflow-x: auto;
+}
+.controlElement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleElement {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: #344273;
+}
+
+.controlElement div {
+    transition: 400ms;
+}
+
+.controlElement div:hover {
+    opacity: 0;
+}
+
+@media (max-width: 411px) {
+    .modalWrapper {
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+    .mainControlButton {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .loader svg {
+    animation: App-logo-spin infinite 1s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -33,6 +235,6 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+      transform: rotate(360deg);
   }
 }
